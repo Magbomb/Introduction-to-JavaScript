@@ -58,8 +58,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+    return a * b;
   }
 
 
@@ -74,9 +74,14 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+
+function dogYears(humanYears) {
+  return humanYears * 7;
 }
+
+console.log(dogYears(5));
+
+
 
 
 
@@ -107,11 +112,25 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age) {
+  if (age >= 1 && weight <= 5){
+    return weight * 0.05;
+  } else if (age >= 1 && weight >= 6 && weight <= 10){
+    return weight * 0.04;
+  } else if (age >= 1 && weight >= 11 && weight <= 15){
+    return weight * 0.03;
+  } else if (age >= 1 && weight > 15){
+    return weight * 0.02;
+  } else if (age < 4/12 && age >= 2/12){
+    return weight * .1;
+  } else if (age < 7/12 && age >= 4/12){
+    return weight * 0.05;
+  } else if (age >= 7/12 && age <= .12){
+    return weight * 0.04;
+  }
   }
 
-
+  console.log(hungryDog());
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -134,8 +153,22 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+let randomNum = Math.floor(Math.random() * 3) + 1;
 function game(user, computer){
-    /*add your code here*/
+  computer = randomNum;
+  let Msg = "Placeholder";
+  if(user === computer){
+    Msg = "it's a tie";
+    return Msg;
+  }
+  else if((user === 1 && computer === 2 )||( user === 2 && computer === 3 )||( user === 3 && computer === 1)){
+    Msg = "you lose!";
+    return Msg;
+  }
+  else if((user === 2 && computer === 1 )||( user === 3 && computer == 2 )||( user === 1 && computer === 3)){
+    Msg = "you win!";
+    return Msg;
+  }
 }
   
   
